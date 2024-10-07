@@ -64,7 +64,7 @@ void setup() {
   Serial.begin(9600);
   Wire1.begin();  //Join I2C bus
   //Check if the AHT20 will acknowledge
-  if (humiditySensor.begin(Wire1) == false) {
+  if (humiditySensor.begin(&Wire1) == false) {
     Serial.println("AHT20 not detected. Please check wiring. Freezing.");
     while (1)
       ;
